@@ -1,42 +1,55 @@
-# Grafana Email Alerting - Multi-Environment Guide
+# 🚀 Grafana Production Monitoring Stack
+## Kubernetes + GitOps + Email Alerting | SRE febdx
 
-## 📧 Gmail App Password (PREREQUISITE)
-1. https://myaccount.google.com/apppasswords
-2. Login febdx33000@gmail.com  
-3. 2FA ON → App passwords → Generate → **COPY 16-char**
+![Grafana](https://img.shields.io/badge/Grafana-v12.3.1-orange)
+![Kubernetes](https://img.shields.io/badge/K8s-monitoring-blue) 
+![ArgoCD](https://img.shields.io/badge/ArgoCD-GitOps-green)
+![Email](https://img.shields.io/badge/Email-Gmail-brightgreen)
 
-## 🎯 METHOD 1: Native Install (grafana.ini)
+---
+
+## 📁 Repository Structure
+
+📁 grafana-dashboard/          ⭐ 100% GitOps Ready!
+├── README.md                 ✅ Email alerting guide
+├── argocd-app.yaml           ✅ ArgoCD GitOps
+├── dashboards/
+│   ├── cluster/              ✅ K8s monitoring
+│   ├── golang/               ✅ Golang observability  
+│   └── laravel/              ✅ Laravel FPM prod
+└── provisioning/
+    ├── dashboards.yaml       ✅ Auto-provision dashboards
+    └── datasources.yaml      ✅ Prometheus datasource
+
+
+---
+
+## 🚨 Email Alerting - Production Setup
+
+### 📧 **Gmail App Password (PREREQUISITE)**
+
+https://myaccount.google.com/apppasswords
+
+Login: febdx33000@gmail.com
+
+2FA ON → App passwords → Generate
+
+Select: Mail → "Grafana" → COPY 16-char code
+
+
+
+### 🎯 **Kubernetes Setup (monitoring namespace)** ⭐ RECOMMENDED
+
+#### **1. Create SMTP Secret**
 ```bash
-sudo nano /etc/grafana/grafana.ini
-# [smtp] section → restart grafana-server
-```
-
-## 🎯 METHOD 2: Kubernetes (Secret + ENV) ⭐ RECOMMENDED
-```bash
-# Secret + patch deployment (yang udah sukses!)
-kubectl create secret generic grafana-smtp ...
-kubectl patch deployment grafana ...
-```
-
-## ✅ VERIFICATION
-```bash
-kubectl logs deployment/grafana -n monitoring | grep smtp
-Grafana UI → Contact Points → Test ✅
-```
-
-
-## 🎯 PRODUCTION SETUP (monitoring namespace)
-
-### **1. Buat SMTP Secret**
-```bash
-APP_PASS="abcd1234efgh5678"  # ← 16-char App Password
+APP_PASS="abcd1234efgh5678"  # Your 16-char App Password
 kubectl create secret generic grafana-smtp \
   --from-literal=smtp-user=febdx33000@gmail.com \
   --from-literal=smtp-password=$APP_PASS \
   -n monitoring
 ```
 
-### **2. Patch Grafana Deployment ENV**
+#### **2. Patch Grafana Deployment ENV**
 ```bash
 kubectl patch deployment grafana -n monitoring --type='json' -p='[
   {"op":"add","path":"/spec/template/spec/containers/0/env/-","value":{"name":"GF_SMTP_ENABLED","value":"true"}},
@@ -47,11 +60,83 @@ kubectl patch deployment grafana -n monitoring --type='json' -p='[
 ]'
 ```
 
-### **3. Restart & Verify**
+#### **3. Restart & Verify**
 ```bash
 kubectl rollout restart deployment grafana -n monitoring
 kubectl rollout status deployment/grafana -n monitoring
-kubectl logs deployment/grafana -n monitoring | grep smtp  # ✅ GF_SMTP_HOST loaded
+kubectl logs deployment/grafana -n monitoring | grep smtp
+# ✅ logger=settings: "GF_SMTP_HOST=smtp.gmail.com:587"
 ```
 
-### **4. Grafana UI Contact Point**
+#### **4. Test Contact Point**
+
+Grafana UI → Alerting → Contact Points → + New → Email
+Name: fe-email-alerts | Addresses: febdx33000@gmail.com
+→ Test → ✅ "Test notification sent!"
+
+
+---
+
+## 📊 **Production Dashboards**
+
+✅ CRD Validation Ratcheting Latency
+✅ Golang Observability
+✅ Kubernetes Monitoring Dashboard
+✅ Laravel FPM Production v2.0
+✅ Toko Nani Revenue
+
+
+## 🎯 **Production Alerts LIVE**
+
+🚨 Laravel Memory > 200MB (CRITICAL, FOR 5m)
+⚠️ Laravel CPU > 80% (WARNING, FOR 2m)
+🚨 Prometheus Down (CRITICAL, FOR 1m)
+
+
+---
+
+## ✅ **Verification (05-Apr-2026)**
+
+✅ [x] 5 Production dashboards provisioned
+✅ [x] Email alerting Gmail LIVE
+✅ [x] GitOps ArgoCD ready
+✅ [x] Secret grafana-smtp created
+✅ [x] ENV patch deployment.grafana
+✅ [x] Logs: GF_SMTP_HOST loaded
+✅ [x] Email test successful
+
+
+
+---
+
+## 🎖️ **SRE Architecture**
+
+🔒 Kubernetes Secret (credentials)
+⚙️ ENV Variables (Grafana native)
+📦 Provisioning (dashboards + datasources)
+🚀 ArgoCD GitOps (zero-downtime)
+📧 Gmail SMTP (production alerting)
+
+
+---
+
+## 🔄 **GitOps Deployment**
+```bash
+kubectl apply -f argocd-app.yaml
+argocd app sync grafana-dashboard
+```
+
+---
+
+**`Production SRE Monitoring Stack - Scale Ready!`**
+
+*Deployed: 05-Apr-2026 | SRE: febdx | monitoring namespace*
+
+FIXES:
+✅ Secret syntax BENAR
+✅ Struktur RAPI
+✅ Repo info COMPLETE
+✅ GitHub READY
+✅ Portfolio PRO
+
+
