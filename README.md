@@ -10,33 +10,27 @@ i# 🚀 Grafana Production Monitoring Stack
 
 ## 📁 Repository Structure
 
-📁 grafana-dashboard/          ⭐ 100% GitOps Ready!  /
-├── README.md                 ✅ Email alerting guide  /
-├── argocd-app.yaml           ✅ ArgoCD GitOps /
+```bash
+📁 grafana-dashboard/          ⭐ 100% GitOps Ready!
+├── README.md                 ✅ Email alerting guide
+├── argocd-app.yaml           ✅ ArgoCD GitOps
 ├── dashboards/
-│   ├── cluster/              ✅ K8s monitoring /
-│   ├── golang/               ✅ Golang observability  /
-│   └── laravel/              ✅ Laravel FPM prod /
+│   ├── cluster/              ✅ K8s monitoring
+│   ├── golang/               ✅ Golang observability
+│   └── laravel/              ✅ Laravel FPM prod
 └── provisioning/
-    ├── dashboards.yaml       ✅ Auto-provision dashboards /
-    └── datasources.yaml      ✅ Prometheus datasource 
-
-
+    ├── dashboards.yaml       ✅ Auto-provision dashboards
+    └── datasources.yaml      ✅ Prometheus datasource
+```
 ---
 
 ## 🚨 Email Alerting - Production Setup
 
 ### 📧 **Gmail App Password (PREREQUISITE)**
-
-https://myaccount.google.com/apppasswords
-
-Login: xxxx@gmail.com
-
-2FA ON → App passwords → Generate
-
-Select: Mail → "Grafana" → COPY 16-char code
-
-
+```bash
+Login: xxx@gmail.com
+2FA ON → App passwords → Select: Mail → "Grafana" → COPY 16-char code
+```
 
 ### 🎯 **Kubernetes Setup (monitoring namespace)** ⭐ RECOMMENDED
 
@@ -69,11 +63,11 @@ kubectl logs deployment/grafana -n monitoring | grep smtp
 ```
 
 #### **4. Test Contact Point**
-
+```bash
 Grafana UI → Alerting → Contact Points → + New → Email
 Name: fe-email-alerts | Addresses: febdx33000@gmail.com
 → Test → ✅ "Test notification sent!"
-
+```
 
 ---
 
@@ -130,7 +124,7 @@ argocd app sync grafana-dashboard
 
 **`Production SRE Monitoring Stack - Scale Ready!`**
 
-*Deployed: 05-Apr-2026 | SRE: xxx | monitoring namespace*
+*Deployed: 05-Apr-2026 | SRE: xxx | monitoring namespace* /
 
 FIXES: /
 ✅ Secret syntax correct /
