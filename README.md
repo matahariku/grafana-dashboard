@@ -72,25 +72,25 @@ Name: fe-email-alerts | Addresses: febdx33000@gmail.com
 ---
 
 ## 📊 **Production Dashboards**
-
+```bash
 ✅ CRD Validation Ratcheting Latency
 ✅ Golang Observability
 ✅ Kubernetes Monitoring Dashboard
 ✅ Laravel FPM Production v2.0
 ✅ Toko Nani Revenue
-
+```
 
 ## 🎯 **Production Alerts LIVE**
-
+```bash
 🚨 Laravel Memory > 200MB (CRITICAL, FOR 5m)
 ⚠️ Laravel CPU > 80% (WARNING, FOR 2m)
 🚨 Prometheus Down (CRITICAL, FOR 1m)
-
+```
 
 ---
 
 ## ✅ **Verification (05-Apr-2026)**
-
+```bash
 ✅ [x] 5 Production dashboards provisioned /
 ✅ [x] Email alerting Gmail LIVE /
 ✅ [x] GitOps ArgoCD ready /
@@ -98,19 +98,19 @@ Name: fe-email-alerts | Addresses: febdx33000@gmail.com
 ✅ [x] ENV patch deployment.grafana /
 ✅ [x] Logs: GF_SMTP_HOST loaded /
 ✅ [x] Email test successful
-
+```
 
 
 ---
 
 ## 🎖️ **SRE Architecture**
-
+```bash
 🔒 Kubernetes Secret (credentials) /
 ⚙️ ENV Variables (Grafana native) /
 📦 Provisioning (dashboards + datasources) /
 🚀 ArgoCD GitOps (zero-downtime) /
 📧 Gmail SMTP (production alerting)
-
+```
 
 ---
 
@@ -123,7 +123,7 @@ argocd app sync grafana-dashboard
 ---
 
 **`Production SRE Monitoring Stack - Scale Ready!`**
-
+```bash
 *Deployed: 05-Apr-2026 | SRE: xxx | monitoring namespace* /
 
 FIXES: /
@@ -132,24 +132,22 @@ FIXES: /
 ✅ Repo info COMPLETE /
 ✅ GitHub READY /
 ✅ Portfolio PRO
-
+```
 ## 🚨 **Dual Channel Auto-Alerting PRODUCTION LIVE** ⭐
 
 **06-Apr-2026 16:06 CEST - VERIFIED:**
+```bash
 [Grafana Alerts SRE Channel - LIVE!]
 Firing
 Value: B=22, C=1
 alertname = TestAlert
 Dashboard: https://grafana.xxx.net/d/...
 
-text
 
 **Production Alerts (OTOMATIK):**
 🚨 Laravel Memory > 200MB → Email + Telegram
 ⚠️ Laravel CPU > 80% → Email + Telegram
 
-text
-
-**Notification Routing:**
+```
 Custom annotation: telegram-sre-febdx → DUAL CHANNEL
 CHAT_ID: -1003804987196 | Bot: @xx_grafana_bot
