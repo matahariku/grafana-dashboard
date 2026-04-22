@@ -1,4 +1,4 @@
-# 🚀 Grafana Production Monitoring Stack
+i# 🚀 Grafana Production Monitoring Stack
 ## Kubernetes + GitOps + Email Alerting | SRE febdx
 
 ![Grafana](https://img.shields.io/badge/Grafana-v12.3.1-orange)
@@ -10,16 +10,16 @@
 
 ## 📁 Repository Structure
 
-📁 grafana-dashboard/          ⭐ 100% GitOps Ready!
-├── README.md                 ✅ Email alerting guide
-├── argocd-app.yaml           ✅ ArgoCD GitOps
+📁 grafana-dashboard/          ⭐ 100% GitOps Ready!  /
+├── README.md                 ✅ Email alerting guide  /
+├── argocd-app.yaml           ✅ ArgoCD GitOps /
 ├── dashboards/
-│   ├── cluster/              ✅ K8s monitoring
-│   ├── golang/               ✅ Golang observability  
-│   └── laravel/              ✅ Laravel FPM prod
+│   ├── cluster/              ✅ K8s monitoring /
+│   ├── golang/               ✅ Golang observability  /
+│   └── laravel/              ✅ Laravel FPM prod /
 └── provisioning/
-    ├── dashboards.yaml       ✅ Auto-provision dashboards
-    └── datasources.yaml      ✅ Prometheus datasource
+    ├── dashboards.yaml       ✅ Auto-provision dashboards /
+    └── datasources.yaml      ✅ Prometheus datasource 
 
 
 ---
@@ -30,7 +30,7 @@
 
 https://myaccount.google.com/apppasswords
 
-Login: febdx33000@gmail.com
+Login: xxxx@gmail.com
 
 2FA ON → App passwords → Generate
 
@@ -97,12 +97,12 @@ Name: fe-email-alerts | Addresses: febdx33000@gmail.com
 
 ## ✅ **Verification (05-Apr-2026)**
 
-✅ [x] 5 Production dashboards provisioned
-✅ [x] Email alerting Gmail LIVE
-✅ [x] GitOps ArgoCD ready
-✅ [x] Secret grafana-smtp created
-✅ [x] ENV patch deployment.grafana
-✅ [x] Logs: GF_SMTP_HOST loaded
+✅ [x] 5 Production dashboards provisioned /
+✅ [x] Email alerting Gmail LIVE /
+✅ [x] GitOps ArgoCD ready /
+✅ [x] Secret grafana-smtp created /
+✅ [x] ENV patch deployment.grafana /
+✅ [x] Logs: GF_SMTP_HOST loaded /
 ✅ [x] Email test successful
 
 
@@ -111,10 +111,10 @@ Name: fe-email-alerts | Addresses: febdx33000@gmail.com
 
 ## 🎖️ **SRE Architecture**
 
-🔒 Kubernetes Secret (credentials)
-⚙️ ENV Variables (Grafana native)
-📦 Provisioning (dashboards + datasources)
-🚀 ArgoCD GitOps (zero-downtime)
+🔒 Kubernetes Secret (credentials) /
+⚙️ ENV Variables (Grafana native) /
+📦 Provisioning (dashboards + datasources) /
+🚀 ArgoCD GitOps (zero-downtime) /
 📧 Gmail SMTP (production alerting)
 
 
@@ -130,13 +130,13 @@ argocd app sync grafana-dashboard
 
 **`Production SRE Monitoring Stack - Scale Ready!`**
 
-*Deployed: 05-Apr-2026 | SRE: febdx | monitoring namespace*
+*Deployed: 05-Apr-2026 | SRE: xxx | monitoring namespace*
 
-FIXES:
-✅ Secret syntax BENAR
-✅ Struktur RAPI
-✅ Repo info COMPLETE
-✅ GitHub READY
+FIXES: /
+✅ Secret syntax correct /
+✅ Struktur clean /
+✅ Repo info COMPLETE /
+✅ GitHub READY /
 ✅ Portfolio PRO
 
 ## 🚨 **Dual Channel Auto-Alerting PRODUCTION LIVE** ⭐
@@ -146,7 +146,7 @@ FIXES:
 Firing
 Value: B=22, C=1
 alertname = TestAlert
-Dashboard: https://grafana.okfe.net/d/...
+Dashboard: https://grafana.xxx.net/d/...
 
 text
 
@@ -158,4 +158,4 @@ text
 
 **Notification Routing:**
 Custom annotation: telegram-sre-febdx → DUAL CHANNEL
-CHAT_ID: -1003804987196 | Bot: @febdx_grafana_bot
+CHAT_ID: -1003804987196 | Bot: @xx_grafana_bot
