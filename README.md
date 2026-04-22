@@ -148,6 +148,7 @@ Dashboard: https://grafana.xxx.net/d/...
 🚨 Laravel Memory > 200MB → Email + Telegram
 ⚠️ Laravel CPU > 80% → Email + Telegram
 
-```
+
 Custom annotation: telegram-sre-febdx → DUAL CHANNEL
 CHAT_ID: -1003804987196 | Bot: @xx_grafana_bot
+```
